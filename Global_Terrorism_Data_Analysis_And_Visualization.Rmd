@@ -8,3 +8,19 @@ output: html_document
 #Navya - Data wrangling
 #Pooja - Data Analysis 
 #Rajesh - Data Visualization
+
+```{r}
+terrorism_data<-read.csv("C:/Users/ual-laptop/Downloads/archive (1)/globalterrorismdb_0718dist.csv")
+head(terrorism_data)
+glimpse(terrorism_data)
+summary(terrorism_data)
+
+```
+
+```{r}
+terrorism_data_ordered <- terrorism_data %>% 
+  select(targtype1, targtype1_txt) %>% 
+  arrange(targtype1)
+
+print(terrorism_data_ordered)
+```
