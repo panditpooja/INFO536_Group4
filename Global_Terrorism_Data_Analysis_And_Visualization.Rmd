@@ -43,6 +43,6 @@ nrow(terrorism_data_ordered)
 ncol(terrorism_data_ordered)
 ```
 ```{r}
-
+#Role 2 Analysis Questions: Count the number of attacks on each target type
 ```
 
