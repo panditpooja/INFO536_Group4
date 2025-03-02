@@ -44,5 +44,13 @@ ncol(terrorism_data_ordered)
 ```
 ```{r}
 #Role 2 Analysis Questions: Count the number of attacks on each target type
+# Load dplyr
+library(dplyr)
+
+# Group by count using dplyr
+number_of_attack_per_target_type <- terrorism_data_ordered %>% group_by(targtype1_txt) %>% 
+  summarise(total_count=n(),
+            .groups = 'drop')
+print.data.frame(number_of_attack_per_target_type)
 ```
 
