@@ -53,4 +53,22 @@ number_of_attack_per_target_type <- terrorism_data_ordered %>% group_by(targtype
             .groups = 'drop')
 print.data.frame(number_of_attack_per_target_type)
 ```
+```{r}
+#Role 3 - Data Visualization - Bar plot of attacks per target type
+
+# Load ggplot2 
+library(ggplot2)
+
+# Create the bar plot
+ggplot(number_of_attack_per_target_type, aes(x = reorder(targtype1_txt, total_count), y = total_count)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  theme_minimal() +
+  labs(
+    title = "Number of Attacks on Each Target Type",
+    x = "Target Type",
+    y = "Number of Attacks"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) # Rotate x-axis labels for better readability
+
+```
 
